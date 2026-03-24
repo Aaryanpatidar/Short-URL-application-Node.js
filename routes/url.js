@@ -4,10 +4,10 @@ const { handleGenerateNewShortURL,
 const router = express.Router();
 
 router
-.post('/url', handleGenerateNewShortURL);
+.post('/', handleGenerateNewShortURL);
 
 router
-.get('/url/analytics/:shortId', handleGetAnalytics);
+.get('/analytics/:shortId', handleGetAnalytics);
 
 router
 .get('/:shortId', handleRedirect);
