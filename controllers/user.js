@@ -24,8 +24,11 @@ async function handleUserLogin(req, res){
     //res.cookie("uid", sessionId);
 
     const token = setUser(user);
-    res.cookie("uid", token); // jwt auth
-    return res.redirect("/");
+    // res.cookie("uid", token); // jwt auth using cookie
+    // return res.redirect("/");  // for browsers, beacause browser store cookie, 
+    // and can rend html pages but mobile app and other sources not
+
+    return res.json({ token });
 }
 
 module.exports = {
